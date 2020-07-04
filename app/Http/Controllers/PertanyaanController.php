@@ -26,4 +26,9 @@ class PertanyaanController extends Controller
         $pertanyaan = PertanyaanModel::get_all();
         return view('pertanyaan.index', compact('pertanyaan'));
     }
+    
+    public function delete($id) {
+        $delete = PertanyaanModel::delete($id);
+        return redirect('/pertanyaan');
+    }
 }

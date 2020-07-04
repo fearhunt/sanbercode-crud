@@ -19,4 +19,14 @@ class PertanyaanModel {
     $data = DB::table('pertanyaan')->where('id', $id)->first();
     return $data;
   }
+
+  public static function update($id, $request) {
+    $data = DB::table('pertanyaan')->where('id', $id)->update(['jawaban_benar' => $request["jawaban_benar"]]);
+    return $data;
+  }
+
+  public static function delete($id) {
+    $deleted = DB::table('pertanyaan')->where('id', $id)->delete();
+    return $deleted;
+  }
 }

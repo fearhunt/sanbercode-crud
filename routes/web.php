@@ -19,6 +19,9 @@ Route::post('/pertanyaan', 'PertanyaanController@store');   // memasukkan data
 
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');    // tampilan jawaban
 Route::get('/jawaban/{pertanyaan_id}/edit', 'JawabanController@edit');    // ganti jawaban
-Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');    // masukkan jawaban
+Route::put('/jawaban/{pertanyaan_id}', 'JawabanController@store');    // masukkan jawaban
+
+Route::delete('/jawaban/{pertanyaan_id}', 'PertanyaanController@delete');    // hapus data
+
 
 

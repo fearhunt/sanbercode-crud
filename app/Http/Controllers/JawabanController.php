@@ -17,8 +17,8 @@ class JawabanController extends Controller
         return view('jawaban.form', compact('pertanyaan'));
     }
 
-    public function store(Request $request) {
-
+    public function store($id, Request $request) {
+        $pertanyaan = PertanyaanModel::update($id, $request->all());
         return redirect('/pertanyaan');
     }
 }

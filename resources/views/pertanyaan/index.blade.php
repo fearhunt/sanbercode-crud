@@ -15,7 +15,7 @@
                   <th>Likes</th>
                   <th>Dislikes</th>
                   <th>Votes</th>
-                  <th>Jawaban yang Benar</th>
+                  <th>Action</th>
               </tr>
           </thead>
           <tbody>
@@ -26,7 +26,14 @@
                 <td> {{ $data->likes }} </td>
                 <td> {{ $data->dislikes }} </td>
                 <td> {{ $data->votes }} </td>
-                <td> <a href="/jawaban/{{$data->id}}" class="btn btn-sm btn-info">Lihat Jawaban</a> </td>
+                <td> 
+                  <a href="/jawaban/{{$data->id}}" class="btn btn-sm btn-info">Lihat Jawaban</a> 
+                  <form action="/jawaban/{{$data->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger mt-1"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
               </tr>
               @endforeach
           </tbody>

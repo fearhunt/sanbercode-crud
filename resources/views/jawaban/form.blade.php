@@ -9,6 +9,7 @@
   <!-- form start -->
   <form role="form" action="/jawaban/{{$pertanyaan->id}}" method="POST">
     @csrf
+    @method('PUT')
     <div class="card-body">
       <div class="form-group">
       <label for="jawaban_benar">Edit Pertanyaan: {{ $pertanyaan->isi }}</label>
